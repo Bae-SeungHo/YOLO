@@ -35,7 +35,11 @@ YOLO 는 Object Detection 분야에서 가장 유명히 알려진 모델입니�
 ---
 검출할 물체를 선정했으면, 그에 맞는 데이터셋을 수집해야 합니다.
 
-Kaggle 또는 구글 이미지에서 안전모 착용 , 구명조끼 착용 데이터셋과 안전모 , 구명조끼 모두 착용하지 않은 데이터셋을 수집하였습니다.
+Kaggle , roboflow 
+
+
+
+또는 구글 이미지에서 안전모 착용 , 구명조끼 착용 데이터셋과 안전모 , 구명조끼 모두 착용하지 않은 데이터셋을 수집하였습니다.
 
 각각 200장 정도 수집하면 괜찮은 성능이 나오는 것 같습니다.
 
@@ -208,6 +212,6 @@ cd yolov5
 python detect.py --img 416 --conf 0.5 --weights runs/train/my_first_training/weights/best.pt --source 0
 ```
 
-그러면 웹캠을 통해 실시간으로 검출결과가 출력됩니다.
+그러면 웹캠을 통해 실시간으로 결과가 출력됩니다.
 
-
+https://user-images.githubusercontent.com/77887166/130204204-52b60616-db7a-4f48-b11e-dc3d7d6856c7.mp4
