@@ -159,6 +159,55 @@ cmd 를 연후 다음과 같이 입력해줍시다!
 
 ```cmd
 cd yolov5
+python train.py --img 416 --batch 8 --epochs 30 --data ../Dataset/data.yaml --cfg models/yolov5s.yaml --weights yolov5s.pt --name my_first_training
 ```
+여기에서, --img 는 이미지 크기 , --batch 는 배치 사이즈 , --epochs 는 반복 횟수 , --data 는 data.yaml 의 경로, --cfg는 학습에 사용될 모델 사이즈 , --weights 는 이미 학습된 가중치 (없으면 --cfg의 모델사이즈와 같은 이름의 .pt) , --name 은 학습 후 가중치가 저장될 폴더입니다.
+
+batch 사이즈는 클수록 그래픽카드 메모리를 많이 소모하기 때문에 오류가 난다면 batch size 를 줄여볼 수 있습니다.
+
+그리고, 더 정교한 모델을 원한다면 --cfg 의 yolo 모델을 다른 걸 사용할 수 있습니다.
+
+오류가 없다면 바로 학습이 시작될 것입니다.
+
+![image](https://user-images.githubusercontent.com/77887166/130201451-9ed03a80-674a-4720-bec9-a8e919b0b619.png)
+
+
+### 8. 학습 결과 확인하기
+
+학습이 다 되었다면 yolov5 폴더의 runs/train/my_first_training 폴더가 새로 생길 것입니다.
+
+폴더 안에는 학습 가중치가 저장된 weights 폴더 , 그리고 학습 결과 이미지가 같이 들어가 있습니다.
+
+그리고 이 다음 학습된 결과를 통해 검출할 떄에 weights 폴더 안의 가중치 파일을 사용하게 됩니다.
+
+best.pt 는 제일 학습 정확도가 높을 때의 가중치 , last.pt 는 가장 마지막의 가중치입니다. 
+
+
+### 9. 학습한 가중치를 통해 예측하기
+
+이제 학습이 잘 되었는지 확인해봅시다.
+
+우선 사진을 예측하기 위해 다음의 코드를 새로운 cmd 창에 입력합니다. (사진 파일은 Dataset 폴더 안의 sample.jpg 로 저장해줍시다.)
+
+```cmd
+cd yolov5
+python detect.py --img 416 --conf 0.5 --weights runs/train/my_first_training/weights/best.pt --source ../Dataset/sample.jpg 
+```
+
+--img 는 이미지 사이즈 , --conf 는 최소 정확도 , --weights 는 학습한 가중치가 저장된 경로 , --source 는 학습할 사진이 저장된 폴더입니다.
+
+코드를 실행하면 runs/detect/exp 폴더 안의 예측 결과가 저장됩니다.
+
+![image](https://user-images.githubusercontent.com/77887166/130202605-4c8d0d1b-9fcd-49fc-bb5a-8a3f9f3ed9e9.png)  성능이 꽤나 준수합니다.
+
+
+웹캠을 통해 실시간으로 예측하고 싶으면 --source 만 다음과 같이 수정합니다.
+
+```cmd
+cd yolov5
+python detect.py --img 416 --conf 0.5 --weights runs/train/my_first_training/weights/best.pt --source 0
+```
+
+그러면 웹캠을 통해 실시간으로 검출결과가 출력됩니다.
 
 
