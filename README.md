@@ -5,7 +5,7 @@ YOLOv5 Easy Tutorial With Python
 ----------
 YOLO 는 Object Detection 분야에서 가장 유명히 알려진 모델입니다. 
 
-2015 년 YOlov1 를 처음 시작으로 현재 Yolov4 (Darknet) ,Yolov5 (Pycharm) 등의 모델이 만들어 졌습니다.
+2015 년 Yolov1 를 처음 시작으로 현재 Yolov4 (Darknet) ,Yolov5 (Pycharm) 등의 모델이 만들어 졌습니다.
 
 하지만 라이브러리를 로드하고 쉽게 학습하던 Tensorflow 와는 달리  YOLO를 통해 학습을 하려 하면 처음엔 낯선 코드가 어렵게 느껴집니다.
 
@@ -13,6 +13,15 @@ YOLO 는 Object Detection 분야에서 가장 유명히 알려진 모델입니�
 
 
 ### 1. 검출 물체 선택
+
+물체 검출을 하기 위해선 우선 무엇을 검출할 것인지 생각해야겠죠.
+
+저는 안전모 (HardHat) 와 안전재킷(LifeJacket)을 탐지하고 착용 유무를 학습시켜보도록 하겠습니다.
+
+![2](https://user-images.githubusercontent.com/77887166/130190203-c2f6f1bd-9806-492b-bb1c-4f6da3c846c3.jpg)
+안전모
+
+![244817374-medium](https://user-images.githubusercontent.com/77887166/130190314-ec34fcda-0f26-4b82-966a-9fcbd4653d5c.jpg)
 
 
 ```python
