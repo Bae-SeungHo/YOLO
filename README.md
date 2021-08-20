@@ -18,7 +18,7 @@ YOLO 는 Object Detection 분야에서 가장 유명히 알려진 모델입니�
 
 저는 안전모 (HardHat) 와 안전재킷(LifeJacket)을 탐지하고 착용 유무를 학습시켜보도록 하겠습니다.
 
-<img src="https://user-images.githubusercontent.com/77887166/130190203-c2f6f1bd-9806-492b-bb1c-4f6da3c846c3.jpg" width="300" height="300")
+<img src="https://user-images.githubusercontent.com/77887166/130190203-c2f6f1bd-9806-492b-bb1c-4f6da3c846c3.jpg" width="300" height="300")>
 안전모
 
 ![244817374-medium](https://user-images.githubusercontent.com/77887166/130190314-ec34fcda-0f26-4b82-966a-9fcbd4653d5c.jpg){: width="300" height="300"}{: .right}
