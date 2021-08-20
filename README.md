@@ -1,7 +1,7 @@
 YOLOv5 전처리 코드 With Python
 ==============================
 
-'''python
+```python
 1. 
 for label in labels: 
 	img = glob('.//'+label+'/*.jpg')
@@ -9,4 +9,4 @@ for label in labels:
 	if not os.path.exists(os.getcwd()+'//'+'export/images'):
    		os.makedirs(os.getcwd()+'//'+'export/images')
 	[img[i].save('./export/images/'+label+'_'+str(i)+'.jpg','JPEG') for i in range(len(img))]
-'''
+```
