@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[5]:
-
+ 
 
 from glob import glob
 import PIL.Image as PIL
@@ -24,6 +24,7 @@ for label in labels:
 	if not os.path.exists(os.getcwd()+'//'+'export/images'):
    		os.makedirs(os.getcwd()+'//'+'export/images')
 	[img[i].save('./export/images/'+label+'_'+str(i)+'.jpg','JPEG') for i in range(len(img))]
+
 
 
 # In[ ]:
